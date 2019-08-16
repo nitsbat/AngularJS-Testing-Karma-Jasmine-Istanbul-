@@ -1,10 +1,10 @@
-A simple project on testing the Javascript code(AngularJS).
+Testing the Javascript code(AngularJS).
 Karma is used for testing all the test cases written for the JS scripts.
 Jasmine is a framework used to write the test cases.
 And Istanbul framework is used for Checking the code-coverage.
 
 
-The Karma can be installed using the : 
+The Karma can be installed using : 
 
     npm install -g karma-cli
     npm install -g karma
