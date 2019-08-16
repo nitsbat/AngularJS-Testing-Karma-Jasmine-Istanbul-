@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app = "testingAngularApp">
+    <head>
+        <title> Tesing AngularJS </title>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+
+    <body ng-controller = "mainController">
+            <header> <h1> {{ title }} </h1></header>
+            
+            <section>
+                <form ng-submit="addDestination()">
+                    City : <input name="city" type="text" ng-model='newDestination.city' />
+                    Country : <input name="country" type="text" ng-model= 'newDestination.country' />
+                    <input type="submit" value="Add" />
+                </form>
+            </section>
+            
+            <section>
+                <h2> Total Trips : </h2>
+                <h4 ng-show = "message"> {{ message }} </h4>
+                <div ng-repeat= " dest in destinations">
+                    
+                    <span>
+                         {{ dest.city }} , {{ dest.country }} 
+                    </span>
+
+                    <span ng-if = "dest.weather"> - {{ dest.weather.main }} , {{ dest.weather.temp }}</span>
+                    <button ng-click="removeDestination($index)"> Remove </button>
+                    <button ng-click="getWeather(dest)"> Calculate Temp </button>
+                </div>
+            </section>
+
+
+            <section>
+                    <h2>Warmest Destinations</h2>
+                    <div ng-repeat = "dest in destinations | warmestDest : 70">
+                            <span>
+                                    {{ dest.city }} , {{ dest.country }} 
+                            </span>
+                    </div>
+            </section>
+
+
+            
+    </body>
+</html>

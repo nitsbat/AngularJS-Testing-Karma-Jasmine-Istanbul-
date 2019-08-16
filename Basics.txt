@@ -1,0 +1,60 @@
+Testing is important to find the bugs at early stages.
+Testing makes code safer to change.
+We can make the automation easier.
+
+Test case also acts as a documentation. It also forces you to write better code.
+
+
+Types of TESTING :
+
+1. Unit Testing - It means grabbing a small component in the app and testing it in isolation from any other component. The focus is the code still working if anysmall changes are made.
+2. End to End (E2E) Testing - Testing entire flow of view or app according to the user point of view. It is often performed how the application changes when
+                            an event is happening orr action is performed. e.g :-  when a button is pressed what element is added or changed.
+3. Manual Tsting :- Manual Debugging.
+4. Stress Testing :- Giving very stress to an application.
+5. TDD - test driven development. First write the test and then develop your code.
+
+*******************************************************************************************
+
+KARMA - It is the Javascript test runner which is used to execute all the test and coverage reports. It has various great plugins.
+JASMINE - It is a javascript testing framework, It is used to write the Test cases.
+Protractor - It is created by the angular team, created using JASMINE framework and supports the End to End Testing.
+Angular Mocks - It is a library which provides various Mocks.
+
+
+*****************************************************************************************
+JASMINE TUTORIAL
+
+Suite - It is a collection of test cases that can be used to test a specific behavior of the JS code.
+        It is made using the global function describe() which takes two parameters. First is the Suite name and second is the function that implements the
+        test suite.
+
+Spec :- It represents a test case inside the suite. This begins with a call to the Jasmine global function it() with two parameters. First is test case name
+        and second is the function that implements a test case. A spec contains one or more expectations. Each expectation represents an assertion. If any one of the
+        expectation fails, them the whole expectation fails.
+
+
+module('testingAngularApp'); is include in each specs i.e in each test cases.
+
+beforeEach(functionopt, timeoutopt) :- Run some shared setup before each of the specs in the describe in which it is called.
+afterEach(functionopt, timeoutopt) :- Run some shared teardown after each of the specs in the describe in which it is called.
+
+inject() :  Jasmine inject function uses dependency injection to resolve common services or providers, like $rootScope, $controller, 
+            $q (promises mock), $httpBackend ($http mock), and match them to the corresponding parameters. 
+
+*****************************************************************************************
+
+To test the compile and whol HTML we have to download the html2js-preprocessor. 
+What it does is to convert html templates to JAvascript and then give it to karma for testing the actual HTML structure.
+
+If you want to run a specific testcase we have to make the it() keyword as the fit() keyword.
+
+******************************************************************************************
+
+Test coverage :  Also called as the code coverage. It tells us how much our code has been tested. Its function is to check how much part of our code is
+                been covered by unit tests and which have not . Full test coverage doesn't means 100% quality.
+                
+The code coverage can be seen throught the Framework known as the IStanbul which can be integrated with the Karma server.
+Writing test for custom directive is little bit complicated . Hence practice a little.
+We can do Mock for our own imaginative function just we did in writing the JUnits using the angular-mocks. We can mock using the $provide.
+we can also do it using the Spies.
